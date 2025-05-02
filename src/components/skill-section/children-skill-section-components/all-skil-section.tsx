@@ -30,6 +30,12 @@ const skills = {
   ],
 };
 
+interface SkillBarProps {
+  name: string;
+  icon: React.ReactNode;
+  level: number;
+}
+
 export default function AllSkillSection() {
   return (
     <div className="grid md:grid-cols-3 gap-8 w-[90%] mt-20 text-center">
@@ -49,7 +55,7 @@ export default function AllSkillSection() {
   );
 }
 
-function SkillBar({ name, icon, level }) {
+function SkillBar({ name, icon, level }: SkillBarProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [width, setWidth] = useState("0%");
