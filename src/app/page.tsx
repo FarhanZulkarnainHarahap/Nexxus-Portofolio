@@ -6,8 +6,6 @@ import PortoSectionPage from "@/components/portofolio-section/portofolio-section
 import ProfileSectionPage from "@/components/profile-components/profile-section";
 import SkillSectionPage from "@/components/skill-section/skill-section";
 import TestimonialSectionPage from "@/components/Testimonial-section-components/testimonial-section";
-import Link from "next/link";
-
 
 export default function HomePage() {
   return (

@@ -1,7 +1,14 @@
 "use client";
 
-import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaSteam } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaFacebook,
+  FaSteam,
+} from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProfileSectionPage() {
   return (
@@ -18,11 +25,12 @@ export default function ProfileSectionPage() {
               id="profile-heading"
               className="text-3xl md:text-4xl font-bold mb-6"
             >
-              Hello, I'm Farhan 👋
+              Hello, I&rsquo;m Farhan 👋
             </h1>
             <p className="text-lg leading-relaxed mb-4 text-gray-300">
-              I’m a passionate front-end developer focused on building engaging,
-              user-friendly, and accessible websites and web applications.
+              I&rsquo;m a passionate front-end developer focused on building
+              engaging, user-friendly, and accessible websites and web
+              applications.
             </p>
             <p className="text-lg leading-relaxed text-gray-400">
               My mission is to blend clean code with beautiful design while
@@ -76,10 +84,13 @@ export default function ProfileSectionPage() {
 
           {/* Image Section */}
           <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-xl ring-1 ring-white/10">
-            <img
+            <Image
               src="/Farhan.jpg"
               alt="Farhan - Frontend Developer"
-              className="object-cover object-top w-full h-full"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top"
+              priority
             />
           </div>
         </div>

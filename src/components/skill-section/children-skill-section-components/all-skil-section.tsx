@@ -7,9 +7,7 @@ import {
   FaJs,
   FaReact,
   FaNodeJs,
-  FaDocker,
   FaGitAlt,
-  FaAws,
 } from "react-icons/fa";
 import { SiExpress, SiDjango, SiRuby, SiJenkins } from "react-icons/si";
 

@@ -33,10 +33,10 @@ export default function AboutMeSectionPage() {
               About Me
             </h1>
             <p className="text-lg leading-relaxed mb-4 text-gray-300">
-              I graduated with a Bachelor's degree in Information Systems
+              I graduated with a Bachelor&rsquo;s degree in Information Systems
               (S.Kom) from Universitas Muhammadiyah Sumatera Utara in 2024.
-              Currently, I'm deepening my knowledge at Purwadhika, focusing on
-              practical, industry-relevant skills in technology.
+              Currently, I&rsquo;m deepening my knowledge at Purwadhika,
+              focusing on practical, industry-relevant skills in technology.
             </p>
 
             {/* Biography Section */}
