@@ -108,7 +108,7 @@ export default function TestimonialSectionPage() {
         </div>
 
         {/* Responsive Scrollable or Wrapped Container */}
-        <div className="flex flex-wrap sm:flex-nowrap overflow-x-auto gap-6 py-4 scrollbar-hidden">
+        <div className="flex flex-wrap sm:flex-nowrap overflow-x-auto gap-6 py-4 scrollbar-hidden justify-center sm:justify-start">
           {testimonials.map((t, i) => (
             <button
               key={i}

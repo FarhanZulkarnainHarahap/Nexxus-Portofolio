@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 
 type ResumeItem = {
@@ -69,95 +70,86 @@ export default function ExperienceChildSection() {
   );
   const jobItems = resumeItems.filter((item) => item.type === "Job");
 
-  const handleItemClick = (item: ResumeItem) => {
-    setSelectedItem(item);
-  };
-
-  const closeModal = () => {
-    setSelectedItem(null);
-  };
+  const handleItemClick = (item: ResumeItem) => setSelectedItem(item);
+  const closeModal = () => setSelectedItem(null);
 
   return (
-    <section className="text-white py-12 px-6 h-[600px] mt-[-20px]">
-      <h2 className="text-4xl font-bold text-center mb-4">Experience</h2>
+    <section className="text-white py-12 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+        Experience
+      </h2>
       <p className="text-center text-gray-400 mb-10 max-w-2xl mx-auto">
         I design and develop services for customers of all sizes, specializing
         in creating stylish, modern websites, web services, and online stores.
       </p>
-      <div className="w-full grid grid-cols-2 place-items-center h-fit mb-0 mt-[-30px] gap-x-15">
-        <h3 className="w-full h-fit text-xl font-semibold text-center border-b border-[#323232] inline-block px-4">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center mb-8">
+        <h3 className="text-xl font-semibold border-b border-[#323232] pb-2">
           Education Quality
         </h3>
-        <h3 className="text-xl w-full h-fit font-semibold text-center border-b border-[#323232] inline-block px-4">
+        <h3 className="text-xl font-semibold border-b border-[#323232] pb-2">
           Job Experience
         </h3>
       </div>
-      <div
-        className="overflow-x-scroll grid grid-cols-1 md:grid-cols-2 gap-13 max-w-6xl mx-auto h-[80%] scrollbar-thin scrollbar-thumb-gray-600"
-        style={{ scrollbarWidth: "none" }}
-      >
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {/* Education Column */}
-        <div>
-          <div className="flex flex-col gap-6 mt-4">
-            {educationItems.map((item, index) => (
-              <div
-                key={index}
-                className="bg-[#191717] hover:bg-zinc-700 transition-all duration-300 p-6 rounded-xl shadow-md cursor-pointer"
-                onClick={() => handleItemClick(item)}
-              >
-                <span className="text-gray-600 text-xs font-semibold">
-                  {item.date}
-                </span>
-                <h4 className="mt-2 font-semibold text-gray-300">{item.place}</h4>
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-col gap-6">
+          {educationItems.map((item, index) => (
+            <div
+              key={index}
+              className="bg-[#191717] hover:bg-zinc-700 transition-all duration-300 p-6 rounded-xl shadow-md cursor-pointer"
+              onClick={() => handleItemClick(item)}
+            >
+              <span className="text-gray-600 text-xs font-semibold">
+                {item.date}
+              </span>
+              <h4 className="mt-2 font-semibold text-gray-300">{item.place}</h4>
+              <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+              <p className="text-gray-400 text-sm line-clamp-3">
+                Click for more details.
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Job Column */}
-        <div>
-          <div className="flex flex-col gap-6 mt-4">
-            {jobItems.map((item, index) => (
-              <div
-                key={index}
-                className="bg-[#191717] hover:bg-zinc-700 transition-all duration-300 p-6 rounded-xl shadow-md cursor-pointer"
-                onClick={() => handleItemClick(item)}
-              >
-                <span className="text-gray-600 text-xs font-semibold">
-                  {item.date}
-                </span>
-                <h4 className="mt-2 font-semibold text-gray-300">{item.place}</h4>
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-col gap-6">
+          {jobItems.map((item, index) => (
+            <div
+              key={index}
+              className="bg-[#191717] hover:bg-zinc-700 transition-all duration-300 p-6 rounded-xl shadow-md cursor-pointer"
+              onClick={() => handleItemClick(item)}
+            >
+              <span className="text-gray-600 text-xs font-semibold">
+                {item.date}
+              </span>
+              <h4 className="mt-2 font-semibold text-gray-300">{item.place}</h4>
+              <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+              <p className="text-gray-400 text-sm line-clamp-3">
+                Click for more details.
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Modal for Selected Item */}
+      {/* Modal */}
       {selectedItem && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-          <div className="bg-[#191717] p-8 rounded-xl shadow-xl w-96 max-w-full relative">
-            {/* Close Button (X) Inside the Modal */}
+        <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 px-4">
+          <div className="bg-[#191717] p-6 sm:p-8 rounded-xl shadow-xl max-w-md w-full relative">
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-white text-2xl hover:text-red-500 transition duration-300"
+              className="absolute top-4 right-4 text-white text-2xl hover:text-red-500"
             >
-              X
+              ×
             </button>
-            <h2 className="text-2xl font-semibold text-white">{selectedItem.title}</h2>
-            <p className="text-gray-400 mt-2">{selectedItem.place}</p>
-            <p className="text-gray-500 mt-4">{selectedItem.date}</p>
-            <p className="text-gray-400 mt-4">{selectedItem.description}</p>
+            <h2 className="text-2xl font-semibold">{selectedItem.title}</h2>
+            <p className="text-gray-400 mt-1">{selectedItem.place}</p>
+            <p className="text-gray-500 mt-2 text-sm">{selectedItem.date}</p>
+            <p className="text-gray-300 mt-4 text-sm">
+              {selectedItem.description}
+            </p>
           </div>
         </div>
       )}
