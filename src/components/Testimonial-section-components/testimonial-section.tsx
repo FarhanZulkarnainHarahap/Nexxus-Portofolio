@@ -93,28 +93,27 @@ export default function TestimonialSectionPage() {
 
   return (
     <section
-      className="min-h-screen w-full grid place-items-center bg-[#121212] text-white pt-40 px-4"
+      className="min-h-screen w-full bg-[#121212] text-white pt-40 px-4"
       id="testimonial-section"
     >
-      <div className="w-full max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold">What People Say</h2>
-          <p className="mt-4 text-gray-400 max-w-xl mx-auto">
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="text-center mb-12 px-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold">
+            What People Say
+          </h2>
+          <p className="mt-4 text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
             Hear directly from people who worked with me. Honest feedback and
             experience sharing.
           </p>
         </div>
 
-        {/* Scrollable Container for Testimonials with hidden scrollbar */}
-        <div
-          className="overflow-auto flex gap-6 py-4 scrollbar-hidden"
-          style={{ scrollbarWidth: "none" }}
-        >
+        {/* Responsive Scrollable or Wrapped Container */}
+        <div className="flex flex-wrap sm:flex-nowrap overflow-x-auto gap-6 py-4 scrollbar-hidden">
           {testimonials.map((t, i) => (
             <button
               key={i}
               onClick={() => setSelected(i)}
-              className="text-left bg-[#191717] hover:bg-[#2a2a2a] transition p-6 rounded-xl shadow-md min-w-[250px] flex-shrink-0"
+              className="text-left bg-[#191717] hover:bg-[#2a2a2a] transition p-6 rounded-xl shadow-md min-w-[250px] max-w-sm flex-shrink-0 w-full sm:w-[300px]"
             >
               <div className="flex items-center space-x-4 mb-3">
                 <Image
@@ -125,13 +124,13 @@ export default function TestimonialSectionPage() {
                   className="rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-bold">{t.name}</h4>
-                  <p className="text-sm text-gray-400">{t.title}</p>
+                  <h4 className="font-bold text-sm sm:text-base">{t.name}</h4>
+                  <p className="text-xs text-gray-400">{t.title}</p>
                 </div>
               </div>
               <p className="text-sm text-gray-300 line-clamp-3">{t.comment}</p>
               <div className="mt-4 text-yellow-400 font-semibold text-sm">
-                {"★".repeat(t.rating)}
+                {"★".repeat(t.rating)}{" "}
                 <span className="text-white">{t.rating.toFixed(1)}</span>
               </div>
             </button>
@@ -143,10 +142,10 @@ export default function TestimonialSectionPage() {
       <Dialog
         open={selected !== null}
         onClose={() => setSelected(null)}
-        className="fixed z-50 inset-0 flex items-center justify-center bg-black/70"
+        className="fixed z-50 inset-0 flex items-center justify-center bg-black/70 p-4"
       >
         {selected !== null && (
-          <Dialog.Panel className="bg-[#1a1a1a] text-white p-6 rounded-lg max-w-md w-[90%] relative shadow-xl">
+          <Dialog.Panel className="bg-[#1a1a1a] text-white p-6 rounded-lg max-w-md w-full relative shadow-xl">
             <button
               onClick={() => setSelected(null)}
               className="absolute top-4 right-4 text-gray-400 hover:text-white"

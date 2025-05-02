@@ -62,3 +62,10 @@ li:hover::after {
   background-color: #4b5563;
   border-radius: 9999px;
 }
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
