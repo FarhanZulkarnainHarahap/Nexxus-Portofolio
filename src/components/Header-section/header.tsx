@@ -19,10 +19,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  // Detect scroll to activate menu
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY + 100; // offset to trigger earlier
+      const scrollY = window.scrollY + 100;
 
       for (const item of navItems) {
         const section = document.querySelector(item.href);
@@ -36,12 +35,12 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial call
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#191717] border-b border-gray-700 text-white shadow-md">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#191717] border-b border-gray-700 text-white shadow-md ">
       <div className="max-w-full mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -97,19 +96,19 @@ export default function Header() {
       {/* Mobile Nav */}
       {menuOpen && (
         <nav
-          className="md:hidden bg-[#191717] w-full border-t border-gray-600 px-6 py-4"
+          className="md:hidden w-[95%] mx-auto mt-2 bg-[#1f1f1f] rounded-xl border border-gray-600 p-4 shadow-lg mb-4"
           aria-label="Mobile Navigation"
         >
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 pb-4">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`block w-full hover:text-gray-300 transition duration-300 ${
+                  className={`block w-full rounded-md px-3 py-2 transition duration-300 ${
                     activeSection === item.href
-                      ? "font-bold text-blue-400 underline underline-offset-4"
-                      : ""
+                      ? "font-bold text-blue-400 underline underline-offset-4 bg-gray-800"
+                      : "hover:bg-gray-700 hover:text-gray-300"
                   }`}
                 >
                   {item.label}
