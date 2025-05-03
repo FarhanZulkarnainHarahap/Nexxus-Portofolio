@@ -9,7 +9,7 @@ import TestimonialSectionPage from "@/components/Testimonial-section-components/
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen place-items-center text-white bg-gradient-to-b from-gray-800 to-gray-500">
+    <main>
       <ProfileSectionPage />
       <AboutMeSectionPage />
       <SkillSectionPage />

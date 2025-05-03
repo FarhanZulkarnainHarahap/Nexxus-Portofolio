@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[#191717] border-b border-gray-700 text-white shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div className="max-w-full mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <div className="relative w-8 h-5">
@@ -97,7 +97,7 @@ export default function Header() {
       {/* Mobile Nav */}
       {menuOpen && (
         <nav
-          className="md:hidden bg-[#191717] border-t border-gray-600 px-6 py-4"
+          className="md:hidden bg-[#191717] w-full border-t border-gray-600 px-6 py-4"
           aria-label="Mobile Navigation"
         >
           <ul className="flex flex-col gap-4">
