@@ -11,7 +11,22 @@ import {
 } from "react-icons/fa";
 import { SiExpress, SiDjango, SiRuby, SiJenkins } from "react-icons/si";
 
-const skills = {
+// Define a type for each individual skill
+interface Skill {
+  name: string;
+  icon: React.ReactNode;
+  level: number;
+}
+
+// Define the type for the skills object (category -> array of skills)
+interface Skills {
+  "Front-End Skills": Skill[];
+  "Back-End Skills": Skill[];
+  "DevOps & Tools": Skill[];
+}
+
+// Define the skills object with proper typing
+const skills: Skills = {
   "Front-End Skills": [
     { name: "HTML", icon: <FaHtml5 />, level: 100 },
     { name: "CSS", icon: <FaCss3Alt />, level: 70 },
@@ -22,7 +37,7 @@ const skills = {
     { name: "Node.Js", icon: <FaNodeJs />, level: 30 },
     { name: "Express.Js", icon: <SiExpress />, level: 10 },
   ],
-  "DevOps & Tools": [{ name: "Git", icon: <FaGitAlt />, level: 60 }, ,],
+  "DevOps & Tools": [{ name: "Git", icon: <FaGitAlt />, level: 60 }],
 };
 
 interface SkillBarProps {
@@ -40,7 +55,7 @@ export default function AllSkillSection() {
             {category}
           </h2>
           <div className="bg-[#191717] pt-5 pb-5 px-5 rounded-2xl">
-            {skillList.map(({ name, icon, level }) => (
+            {skillList.map(({ name, icon, level }: Skill) => (
               <SkillBar key={name} name={name} icon={icon} level={level} />
             ))}
           </div>
