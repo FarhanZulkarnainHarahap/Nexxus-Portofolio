@@ -15,19 +15,14 @@ const skills = {
   "Front-End Skills": [
     { name: "HTML", icon: <FaHtml5 />, level: 100 },
     { name: "CSS", icon: <FaCss3Alt />, level: 70 },
-    { name: "JavaScript", icon: <FaJs />, level: 50 },
-    { name: "React", icon: <FaReact />, level: 40 },
+    { name: "JavaScript", icon: <FaJs />, level: 70 },
+    { name: "React", icon: <FaReact />, level: 70 },
   ],
   "Back-End Skills": [
     { name: "Node.Js", icon: <FaNodeJs />, level: 30 },
     { name: "Express.Js", icon: <SiExpress />, level: 10 },
-    { name: "Django", icon: <SiDjango />, level: 10 },
-    { name: "Ruby", icon: <SiRuby />, level: 5 },
   ],
-  "DevOps & Tools": [
-    { name: "Git", icon: <FaGitAlt />, level: 20 },
-    { name: "Jenkins", icon: <SiJenkins />, level: 10 },
-  ],
+  "DevOps & Tools": [{ name: "Git", icon: <FaGitAlt />, level: 60 }, ,],
 };
 
 interface SkillBarProps {
