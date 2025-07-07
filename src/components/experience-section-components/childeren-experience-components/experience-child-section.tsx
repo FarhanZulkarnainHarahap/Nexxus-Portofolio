@@ -12,53 +12,30 @@ type ResumeItem = {
 const resumeItems: ResumeItem[] = [
   // Education
   {
-    title: "BSc in Computer Science",
-    place: "University Of Studies, UK",
+    title: "Bachelor of Science in Computer Science",
+    place: "College Of University Muhammadiyah South Sumatera, indonesia",
     type: "Education",
-    date: "Jan 2018 - Aug 2020",
+    date: "Nov 2020 - Nov 2024",
     description:
       "Graduated with a BSc in Computer Science from University of Studies. Focused on software development and computer science theory.",
   },
   {
     title: "Diploma in Web Development",
-    place: "College Of Studies, USA",
+    place: "College Of University Muhammadiyah South Sumatera, indonesia",
     type: "Education",
-    date: "Jan 2018 - Aug 2020",
+    date: "Nov 2020 - Nov 2020",
     description:
       "Completed a diploma program in Web Development, with a focus on front-end and back-end technologies.",
   },
-  {
-    title: "Expert Of Personal Portfolio",
-    place: "PxDraft Studio, UK",
-    type: "Education",
-    date: "Jan 2018 - Aug 2020",
-    description:
-      "Developed and maintained a personal portfolio to showcase my web development projects.",
-  },
+
   // Job
   {
     title: "Sr. Front-end Engineer",
     place: "PxDraft Studio, UK",
     type: "Job",
-    date: "Jan 2018 - Aug 2020",
+    date: "Jan 2022 - Des 2024",
     description:
       "Led front-end development for multiple high-profile projects, focusing on React and JavaScript.",
-  },
-  {
-    title: "Graphic Designer",
-    place: "Twitter LLC, UK",
-    type: "Job",
-    date: "Jan 2018 - Aug 2020",
-    description:
-      "Worked as a graphic designer, contributing to the visual design of several Twitter features.",
-  },
-  {
-    title: "UI/UX Designer – TemplateMonster",
-    place: "Job At Rainbow, UK",
-    type: "Job",
-    date: "Jan 2018 - Aug 2020",
-    description:
-      "Designed user interfaces and experiences for TemplateMonster, ensuring the best user experience.",
   },
 ];
 
